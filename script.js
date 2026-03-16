@@ -21,11 +21,15 @@ function dragEnd(e) {
 
 //Functions Area
 function dragOver(e) {
-    console.log("Passou por cima!");
+    e.preventDefault();
+    e.currentTarget.classList.add('hover');
 }
-function dragLeave() {
-
+function dragLeave(e) {
+    e.currentTarget.classList.remove('hover');
 }
-function drop() {
+function drop(e) {
+    e.currentTarget.classList.remove('hover');
 
+    let dragItem = document.querySelector('.item.dragging');
+    console.log(dragItem);
 }
